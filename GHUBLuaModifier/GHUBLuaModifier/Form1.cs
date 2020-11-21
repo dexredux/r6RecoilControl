@@ -105,7 +105,7 @@ namespace GHUBLuaModifier
 
             thread = new Thread(new ThreadStart(StartApp));
             thread.Start();
-
+            thread2 = new Thread(new ThreadStart(loadWeapons));
 
 
         }
@@ -119,8 +119,12 @@ namespace GHUBLuaModifier
                 a = AttemptLoadFiles();
                 System.Threading.Thread.Sleep(100);
             }
-            thread2 = new Thread(new ThreadStart(loadWeapons));
-            thread2.Start();
+            if(a == 0)
+            {
+                
+                thread2.Start();
+            }
+            
         }
 
         private void loadWeapons()
@@ -251,7 +255,6 @@ namespace GHUBLuaModifier
             finally
             {
                 file.Close();
-
             }
 
             return 0;
@@ -272,8 +275,16 @@ namespace GHUBLuaModifier
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            thread.Abort();
-            thread2.Abort();
+            
+            if (thread.IsAlive)
+            {
+                thread.Abort();
+            }
+            if (thread2.IsAlive)
+            {
+                thread2.Abort();
+            }
+            
             Application.Exit();
         }
 
@@ -286,6 +297,11 @@ namespace GHUBLuaModifier
 
         private void findFolder_Click(object sender, EventArgs e)
         {
+            if (thread.IsAlive)
+            {
+                thread.Abort();
+            }
+            
             
             if (browseFolders.ShowDialog() == DialogResult.OK)
             {
