@@ -17,3 +17,6 @@ How to use:
   Third:
     with it connected, you can now manage your vertical recoil config for each gun I currently have in the app
     ALWAYS remember to save after modifying values, it will not auto save
+
+
+*One final note for anyone wanting to modify the project, I use the Newtonsoft.Json package for object serialization.
