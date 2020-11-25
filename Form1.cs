@@ -87,8 +87,21 @@ namespace GHUBLuaModifier
 
         private Thread thread;
         private Thread thread2;
+        private Thread thread3;
 
-        private Dictionary<String, String> myDictionary = new Dictionary<string, string>();
+        private Dictionary<string, string> myDictionary = new Dictionary<string, string>();
+
+        //hotkey dictionaries
+        //string key to object key e.g. "F1" to Keys.F1
+        private Dictionary<string, Keys> keyDictionary = new Dictionary<string, Keys>();
+        //key to string op, e.g. Keys.F1 to "ASH"
+        private Dictionary<Keys, string> operatorHotKey = new Dictionary<Keys, string>();
+        //string OP to Button "ASH" to r4cButton
+        private Dictionary<string, Button> operatorButtonsDictionary = new Dictionary<string, Button>();
+        //registered hot keys, Key.F1 to true so it doesn't try to register again
+        private Dictionary<Keys, bool> registeredKey = new Dictionary<Keys, bool>();
+        //operator name to operator label for stating which op has a hotkey
+        private Dictionary<string, Label> operatorKeyLabels = new Dictionary<string, Label>();
 
         private Weapons myWeapons;
         private Panel selectedPanel;
@@ -102,13 +115,107 @@ namespace GHUBLuaModifier
             hook.KeyPressed +=
             new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             // register the control + alt + F12 combination as hot key.
-            hook.RegisterHotKey(GHUBLuaModifier.ModifierKeys.Control | GHUBLuaModifier.ModifierKeys.Alt,
-                Keys.F12);
+            hook.RegisterHotKey(GHUBLuaModifier.ModifierKeys.Control, Keys.F12);
+        }
+
+        private void RegisterKeyDict()
+        {
+            keyDictionary.Add("F1", Keys.F1);
+            keyDictionary.Add("F2", Keys.F2);
+            keyDictionary.Add("F3", Keys.F3);
+            keyDictionary.Add("F5", Keys.F5);
+            keyDictionary.Add("F6", Keys.F6);
+            keyDictionary.Add("F7", Keys.F7);
+            keyDictionary.Add("F8", Keys.F8);
+            keyDictionary.Add("F9", Keys.F9);
+            keyDictionary.Add("F10", Keys.F10);
+            keyDictionary.Add("F11", Keys.F11);
+            keyDictionary.Add("F12", Keys.F12);
+        }
+
+        private void RegisterOperators()
+        {
+            operatorButtonsDictionary.Add("ASH", r4cButton);
+            operatorButtonsDictionary.Add("SLEDGE", f2Button);
+            operatorButtonsDictionary.Add("TWITCH", l85Button);
+            operatorButtonsDictionary.Add("ZOFIA", commandoButton);
+            operatorButtonsDictionary.Add("JACKAL", type89Button);
+            operatorButtonsDictionary.Add("HIBANA", ar33Button);
+            operatorButtonsDictionary.Add("ACE", g36cButton);
+            operatorButtonsDictionary.Add("AMARU", a556xiButton);
+            operatorButtonsDictionary.Add("CAPITAO", ak12Button);
+            operatorButtonsDictionary.Add("NOMAD", auga2Button);
+            operatorButtonsDictionary.Add("MAVERICK", carbineButton);
+            operatorButtonsDictionary.Add("BANDIT", c8sfwButton);
+            operatorButtonsDictionary.Add("VALKRIE", mk17Button);
+            operatorButtonsDictionary.Add("MOZZIE", paraButton);
+            operatorButtonsDictionary.Add("LESION", c7eButton);
+            operatorButtonsDictionary.Add("SMOKE", m762Button);
+            operatorButtonsDictionary.Add("ELA", v308Button);
+            operatorButtonsDictionary.Add("DOC", spearButton);
+            operatorButtonsDictionary.Add("KANYE", ar15Button);
+            operatorButtonsDictionary.Add("JAGER", m4Button);
+        }
+
+        private void RegisterKeysDict()
+        {
+            registeredKey.Add(Keys.F1, false);
+            registeredKey.Add(Keys.F2, false);
+            registeredKey.Add(Keys.F3, false);
+            registeredKey.Add(Keys.F5, false);
+            registeredKey.Add(Keys.F6, false);
+            registeredKey.Add(Keys.F7, false);
+            registeredKey.Add(Keys.F8, false);
+            registeredKey.Add(Keys.F9, false);
+            registeredKey.Add(Keys.F10, false);
+            registeredKey.Add(Keys.F11, false);
+            registeredKey.Add(Keys.F12, false);
+        }
+
+        private void RegisterOperatorLabels()
+        {
+            operatorKeyLabels.Add("ASH", ashKey);
+            operatorKeyLabels.Add("SLEDGE", sledgeKey);
+            operatorKeyLabels.Add("TWITCH", twitchKey);
+            operatorKeyLabels.Add("ZOFIA", zofiaKey);
+            operatorKeyLabels.Add("JACKAL", jackalKey);
+            operatorKeyLabels.Add("HIBANA", hibanaKey);
+            operatorKeyLabels.Add("ACE", aceKey);
+            operatorKeyLabels.Add("AMARU", amaruKey);
+            operatorKeyLabels.Add("CAPITAO", capitaoKey);
+            operatorKeyLabels.Add("NOMAD", nomadKey);
+            operatorKeyLabels.Add("MAVERICK", maverickKey);
+            operatorKeyLabels.Add("BANDIT", banditKey);
+            operatorKeyLabels.Add("VALKRIE", valkrieKey);
+            operatorKeyLabels.Add("MOZZIE", mozzieKey);
+            operatorKeyLabels.Add("LESION", lesionKey);
+            operatorKeyLabels.Add("SMOKE", smokeKey);
+            operatorKeyLabels.Add("ELA", elaKey);
+            operatorKeyLabels.Add("DOC", docKey);
+            operatorKeyLabels.Add("KANYE", kanyeKey);
+            operatorKeyLabels.Add("JAGER", jagerKey);
+        }
+
+        private void AddNewHotKey(Keys key)
+        {
+            if (!registeredKey[key])
+            {
+                hook.RegisterHotKey(GHUBLuaModifier.ModifierKeys.Control, key);
+                registeredKey[key] = true;
+            }
+            
+            
         }
 
         private void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
-            UpdateRapidFire();
+            Console.WriteLine(e.Key);
+            if (operatorHotKey.ContainsKey(e.Key))
+            {
+                operatorButtonsDictionary[operatorHotKey[e.Key]].PerformClick();
+            }
+            
+            //UpdateRapidFire();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -116,11 +223,18 @@ namespace GHUBLuaModifier
             this.FormBorderStyle = FormBorderStyle.None;
             selectedPanel = r4cPanel;
             myWeapons = new Weapons();
+            RegisterKeyDict();
+            RegisterOperators();
+            RegisterKeysDict();
+            RegisterOperatorLabels();
 
             thread = new Thread(new ThreadStart(StartApp));
             thread.Start();
             thread2 = new Thread(new ThreadStart(loadWeapons));
 
+            LoadHotKeys();
+            hotKeydropdown.SelectedIndex = 0;
+            hotKeyOp.SelectedIndex = 0;
 
         }
 
@@ -150,6 +264,7 @@ namespace GHUBLuaModifier
             
         }
 
+        #region DONE
         private void DisableModifiers()
         {
             r4cButton.Enabled = false;
@@ -354,6 +469,7 @@ namespace GHUBLuaModifier
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        #endregion
 
 
         #region WindowMods
@@ -877,6 +993,7 @@ namespace GHUBLuaModifier
 
         #endregion
 
+        #region AlsoDone
         private void ChangeScript()
         {
             //possibly gonna do a rapid fire section
@@ -1108,6 +1225,8 @@ namespace GHUBLuaModifier
                 Console.WriteLine(ae);
             }
         }
+
+        #endregion
         private void UpdateHotKey(string whichKey)
         {
             int tempVar = 0;
@@ -1200,6 +1319,169 @@ namespace GHUBLuaModifier
         private void button2_Click_1(object sender, EventArgs e)
         {
             UpdateRapidFire();
+        }
+
+        private void hotKeyButton_Click(object sender, EventArgs e)
+        {
+            // adding custom hot keys is spaghetti at this point
+            //Probably going to get own file, registering hotkeys with this is going to be..weird
+            
+            string localKey = hotKeydropdown.SelectedItem.ToString();
+            string localOp = hotKeyOp.SelectedItem.ToString();
+            AddNewHotKey(keyDictionary[localKey]);
+            if (!operatorHotKey.ContainsKey((keyDictionary[localKey])))
+            {
+                operatorHotKey.Add(keyDictionary[localKey], localOp);
+                currentStatus.Text = "Connected";
+                currentStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                currentStatus.Text = "Key " + keyDictionary[localKey].ToString() + " already assigned";
+                currentStatus.ForeColor = Color.Red;
+            }
+            
+            SaveHotKeys();
+            //key dictionary is a string to key conversion
+            //CHANGE OPERATORHOTKEY TO BIND KEY TO OP
+            //operatorHotkey is Key to string conversion
+            //operatorButtondict is string to button
+        }
+
+        private void ClearOpLabels()
+        {
+            ashKey.Text = "";
+            sledgeKey.Text = "";
+            twitchKey.Text = "";
+            zofiaKey.Text = "";
+            jackalKey.Text = "";
+            hibanaKey.Text = "";
+            aceKey.Text = "";
+            amaruKey.Text = "";
+            capitaoKey.Text = "";
+            nomadKey.Text = "";
+            maverickKey.Text = "";
+            banditKey.Text = "";
+            valkrieKey.Text = "";
+            mozzieKey.Text = "";
+            lesionKey.Text = "";
+            smokeKey.Text = "";
+            elaKey.Text = "";
+            docKey.Text = "";
+            kanyeKey.Text = "";
+            jagerKey.Text = "";
+        }
+        private void LoadHotKeys()
+        {
+            if (!File.Exists("hotkeys.json"))
+            {
+                var localFile = File.Create("hotkeys.json");
+                localFile.Close();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    ClearOpLabels();
+                    var text = File.ReadAllText("hotkeys.json");
+                    //Console.WriteLine(text);
+                    operatorHotKey = JsonConvert.DeserializeObject<Dictionary<Keys, string>>(text);
+                    Console.WriteLine(operatorHotKey.Keys);
+                    if (operatorHotKey.ContainsKey(Keys.F1))
+                    {
+                        Console.WriteLine("yes");
+                        AddNewHotKey(Keys.F1);
+                        operatorKeyLabels[operatorHotKey[Keys.F1]].Text = "F1";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F2))
+                    {
+                        AddNewHotKey(Keys.F2);
+                        operatorKeyLabels[operatorHotKey[Keys.F2]].Text = "F2";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F3))
+                    {
+                        AddNewHotKey(Keys.F3);
+                        operatorKeyLabels[operatorHotKey[Keys.F3]].Text = "F3";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F5))
+                    {
+                        AddNewHotKey(Keys.F5);
+                        operatorKeyLabels[operatorHotKey[Keys.F5]].Text = "F5";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F6))
+                    {
+                        AddNewHotKey(Keys.F6);
+                        operatorKeyLabels[operatorHotKey[Keys.F6]].Text = "F6";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F7))
+                    {
+                        AddNewHotKey(Keys.F7);
+                        operatorKeyLabels[operatorHotKey[Keys.F7]].Text = "F7";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F8))
+                    {
+                        AddNewHotKey(Keys.F8);
+                        operatorKeyLabels[operatorHotKey[Keys.F8]].Text = "F8";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F9))
+                    {
+                        AddNewHotKey(Keys.F9);
+                        operatorKeyLabels[operatorHotKey[Keys.F9]].Text = "F9";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F10))
+                    {
+                        AddNewHotKey(Keys.F10);
+                        operatorKeyLabels[operatorHotKey[Keys.F10]].Text = "F10";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F11))
+                    {
+                        AddNewHotKey(Keys.F11);
+                        operatorKeyLabels[operatorHotKey[Keys.F11]].Text = "F11";
+                    }
+                    if (operatorHotKey.ContainsKey(Keys.F12))
+                    {
+                        AddNewHotKey(Keys.F12);
+                        operatorKeyLabels[operatorHotKey[Keys.F12]].Text = "F12";
+                    }
+                }
+                catch(Exception ae)
+                {
+                    Console.WriteLine(ae);
+                }
+            }
+
+        }
+
+        private void SaveHotKeys()
+        {
+            using (StreamWriter file = File.CreateText("hotkeys.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                try
+                {
+                    serializer.Serialize(file, operatorHotKey);
+
+                    file.Close();
+
+                    LoadHotKeys();
+                }
+                catch(Exception ae)
+                {
+                    Console.WriteLine(ae);
+                    //try catch because operatorHotKey could be null and if the user decides to hit save it would break
+                }
+                
+            }
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            string localKey = hotKeydropdown.SelectedItem.ToString();
+            operatorHotKey.Remove(keyDictionary[localKey]);
+            SaveHotKeys();
+            //to delete a hot key for this, I have to delete all registered hotkeys, and add all but the one I want removed back
+            //to REPLACE a hot key, I don't have to delete the registered key, but replace the dictionary value
         }
     }
 

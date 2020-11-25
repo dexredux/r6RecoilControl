@@ -48,94 +48,114 @@
             this.f2Label = new System.Windows.Forms.Label();
             this.r4cButton = new System.Windows.Forms.Button();
             this.r4cPanel = new System.Windows.Forms.Panel();
+            this.ashKey = new System.Windows.Forms.Label();
             this.f2Panel = new System.Windows.Forms.Panel();
+            this.sledgeKey = new System.Windows.Forms.Label();
             this.f2Button = new System.Windows.Forms.Button();
             this.l85Button = new System.Windows.Forms.Button();
             this.l85Trackerbar = new System.Windows.Forms.TrackBar();
             this.l85Panel = new System.Windows.Forms.Panel();
+            this.twitchKey = new System.Windows.Forms.Label();
             this.l85ValueLabel = new System.Windows.Forms.Label();
             this.l85Label = new System.Windows.Forms.Label();
             this.commandoButton = new System.Windows.Forms.Button();
             this.commandoTrackbar = new System.Windows.Forms.TrackBar();
             this.commandoPanel = new System.Windows.Forms.Panel();
+            this.zofiaKey = new System.Windows.Forms.Label();
             this.commandoValueLabel = new System.Windows.Forms.Label();
             this.commandoLabel = new System.Windows.Forms.Label();
             this.type89Button = new System.Windows.Forms.Button();
             this.type89Trackbar = new System.Windows.Forms.TrackBar();
             this.type89Panel = new System.Windows.Forms.Panel();
+            this.jackalKey = new System.Windows.Forms.Label();
             this.type89ValueLabel = new System.Windows.Forms.Label();
             this.type89Label = new System.Windows.Forms.Label();
             this.ar33Panel = new System.Windows.Forms.Panel();
+            this.hibanaKey = new System.Windows.Forms.Label();
             this.ar33Button = new System.Windows.Forms.Button();
             this.ar33Trackbar = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.ar33ValueLabel = new System.Windows.Forms.Label();
             this.g36cPanel = new System.Windows.Forms.Panel();
+            this.aceKey = new System.Windows.Forms.Label();
             this.g36cButton = new System.Windows.Forms.Button();
             this.g36cTrackbar = new System.Windows.Forms.TrackBar();
             this.label4 = new System.Windows.Forms.Label();
             this.g36cValueLabel = new System.Windows.Forms.Label();
             this.a556xiPanel = new System.Windows.Forms.Panel();
+            this.amaruKey = new System.Windows.Forms.Label();
             this.a556xiButton = new System.Windows.Forms.Button();
             this.a556xiTrackbar = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.a556xiValueLabel = new System.Windows.Forms.Label();
             this.ak12Panel = new System.Windows.Forms.Panel();
+            this.capitaoKey = new System.Windows.Forms.Label();
             this.ak12Button = new System.Windows.Forms.Button();
             this.ak12Trackbar = new System.Windows.Forms.TrackBar();
             this.label8 = new System.Windows.Forms.Label();
             this.ak12ValueLabel = new System.Windows.Forms.Label();
             this.auga2Panel = new System.Windows.Forms.Panel();
+            this.nomadKey = new System.Windows.Forms.Label();
             this.auga2Button = new System.Windows.Forms.Button();
             this.auga2Trackbar = new System.Windows.Forms.TrackBar();
             this.label10 = new System.Windows.Forms.Label();
             this.auga2ValueLabel = new System.Windows.Forms.Label();
             this.c7ePanel = new System.Windows.Forms.Panel();
+            this.lesionKey = new System.Windows.Forms.Label();
             this.c7eButton = new System.Windows.Forms.Button();
             this.c7eTrackbar = new System.Windows.Forms.TrackBar();
             this.label12 = new System.Windows.Forms.Label();
             this.c7eValueLabel = new System.Windows.Forms.Label();
             this.paraPanel = new System.Windows.Forms.Panel();
+            this.mozzieKey = new System.Windows.Forms.Label();
             this.paraButton = new System.Windows.Forms.Button();
             this.paraTrackbar = new System.Windows.Forms.TrackBar();
             this.label14 = new System.Windows.Forms.Label();
             this.paraValueLabel = new System.Windows.Forms.Label();
             this.mk17cqbPanel = new System.Windows.Forms.Panel();
+            this.valkrieKey = new System.Windows.Forms.Label();
             this.mk17Button = new System.Windows.Forms.Button();
             this.mk17Trackbar = new System.Windows.Forms.TrackBar();
             this.label16 = new System.Windows.Forms.Label();
             this.mk17ValueLabel = new System.Windows.Forms.Label();
             this.c8sfwPanel = new System.Windows.Forms.Panel();
+            this.banditKey = new System.Windows.Forms.Label();
             this.c8sfwButton = new System.Windows.Forms.Button();
             this.c8sfwTrackbar = new System.Windows.Forms.TrackBar();
             this.label18 = new System.Windows.Forms.Label();
             this.c85sfwValueLabel = new System.Windows.Forms.Label();
             this.carbinePanel = new System.Windows.Forms.Panel();
+            this.maverickKey = new System.Windows.Forms.Label();
             this.carbineButton = new System.Windows.Forms.Button();
             this.carbineTrackbar = new System.Windows.Forms.TrackBar();
             this.label20 = new System.Windows.Forms.Label();
             this.carbineValueLabel = new System.Windows.Forms.Label();
             this.m762Panel = new System.Windows.Forms.Panel();
+            this.smokeKey = new System.Windows.Forms.Label();
             this.m762Button = new System.Windows.Forms.Button();
             this.m762Trackbar = new System.Windows.Forms.TrackBar();
             this.label22 = new System.Windows.Forms.Label();
             this.m762ValueLabel = new System.Windows.Forms.Label();
             this.v308Panel = new System.Windows.Forms.Panel();
+            this.elaKey = new System.Windows.Forms.Label();
             this.v308Button = new System.Windows.Forms.Button();
             this.v308Trackbar = new System.Windows.Forms.TrackBar();
             this.label24 = new System.Windows.Forms.Label();
             this.v308ValueLabel = new System.Windows.Forms.Label();
             this.spearPanel = new System.Windows.Forms.Panel();
+            this.docKey = new System.Windows.Forms.Label();
             this.spearButton = new System.Windows.Forms.Button();
             this.spearTrackbar = new System.Windows.Forms.TrackBar();
             this.label26 = new System.Windows.Forms.Label();
             this.spearValueLabel = new System.Windows.Forms.Label();
             this.ar15Panel = new System.Windows.Forms.Panel();
+            this.kanyeKey = new System.Windows.Forms.Label();
             this.ar15Button = new System.Windows.Forms.Button();
             this.ar15Trackbar = new System.Windows.Forms.TrackBar();
             this.label28 = new System.Windows.Forms.Label();
             this.ar15ValueLabel = new System.Windows.Forms.Label();
             this.m4Panel = new System.Windows.Forms.Panel();
+            this.jagerKey = new System.Windows.Forms.Label();
             this.m4Button = new System.Windows.Forms.Button();
             this.m4Trackbar = new System.Windows.Forms.TrackBar();
             this.label30 = new System.Windows.Forms.Label();
@@ -146,8 +166,12 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pullDownAmount = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.rapidFireButton = new System.Windows.Forms.Button();
+            this.hotKeydropdown = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.hotKeyOp = new System.Windows.Forms.ComboBox();
+            this.hotKeyButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.r4cTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.f2Trackbar)).BeginInit();
@@ -199,7 +223,7 @@
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(889, 12);
+            this.CloseButton.Location = new System.Drawing.Point(948, 10);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(45, 30);
             this.CloseButton.TabIndex = 0;
@@ -213,7 +237,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(828, 12);
+            this.button1.Location = new System.Drawing.Point(897, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 30);
             this.button1.TabIndex = 1;
@@ -272,9 +296,9 @@
             this.toolStripStatusLabel1,
             this.currentStatus});
             this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 538);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 587);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(946, 5);
+            this.statusStrip1.Size = new System.Drawing.Size(1005, 5);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
@@ -393,26 +417,50 @@
             // r4cPanel
             // 
             this.r4cPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.r4cPanel.Controls.Add(this.ashKey);
             this.r4cPanel.Controls.Add(this.r4cLabel);
             this.r4cPanel.Controls.Add(this.r4cButton);
             this.r4cPanel.Controls.Add(this.r4cValueLabel);
             this.r4cPanel.Controls.Add(this.r4cTrackbar);
-            this.r4cPanel.Location = new System.Drawing.Point(50, 89);
+            this.r4cPanel.Location = new System.Drawing.Point(39, 143);
             this.r4cPanel.Name = "r4cPanel";
-            this.r4cPanel.Size = new System.Drawing.Size(150, 100);
+            this.r4cPanel.Size = new System.Drawing.Size(181, 100);
             this.r4cPanel.TabIndex = 17;
+            // 
+            // ashKey
+            // 
+            this.ashKey.AutoSize = true;
+            this.ashKey.BackColor = System.Drawing.Color.Transparent;
+            this.ashKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ashKey.ForeColor = System.Drawing.Color.White;
+            this.ashKey.Location = new System.Drawing.Point(130, 42);
+            this.ashKey.Name = "ashKey";
+            this.ashKey.Size = new System.Drawing.Size(0, 16);
+            this.ashKey.TabIndex = 17;
             // 
             // f2Panel
             // 
             this.f2Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.f2Panel.Controls.Add(this.sledgeKey);
             this.f2Panel.Controls.Add(this.f2Button);
             this.f2Panel.Controls.Add(this.f2Trackbar);
             this.f2Panel.Controls.Add(this.f2ValueLabel);
             this.f2Panel.Controls.Add(this.f2Label);
-            this.f2Panel.Location = new System.Drawing.Point(222, 89);
+            this.f2Panel.Location = new System.Drawing.Point(226, 143);
             this.f2Panel.Name = "f2Panel";
-            this.f2Panel.Size = new System.Drawing.Size(150, 100);
+            this.f2Panel.Size = new System.Drawing.Size(181, 100);
             this.f2Panel.TabIndex = 18;
+            // 
+            // sledgeKey
+            // 
+            this.sledgeKey.AutoSize = true;
+            this.sledgeKey.BackColor = System.Drawing.Color.Transparent;
+            this.sledgeKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sledgeKey.ForeColor = System.Drawing.Color.White;
+            this.sledgeKey.Location = new System.Drawing.Point(132, 42);
+            this.sledgeKey.Name = "sledgeKey";
+            this.sledgeKey.Size = new System.Drawing.Size(0, 16);
+            this.sledgeKey.TabIndex = 18;
             // 
             // f2Button
             // 
@@ -454,14 +502,26 @@
             // l85Panel
             // 
             this.l85Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.l85Panel.Controls.Add(this.twitchKey);
             this.l85Panel.Controls.Add(this.l85Button);
             this.l85Panel.Controls.Add(this.l85Trackerbar);
             this.l85Panel.Controls.Add(this.l85ValueLabel);
             this.l85Panel.Controls.Add(this.l85Label);
-            this.l85Panel.Location = new System.Drawing.Point(394, 89);
+            this.l85Panel.Location = new System.Drawing.Point(413, 143);
             this.l85Panel.Name = "l85Panel";
-            this.l85Panel.Size = new System.Drawing.Size(150, 100);
+            this.l85Panel.Size = new System.Drawing.Size(181, 100);
             this.l85Panel.TabIndex = 20;
+            // 
+            // twitchKey
+            // 
+            this.twitchKey.AutoSize = true;
+            this.twitchKey.BackColor = System.Drawing.Color.Transparent;
+            this.twitchKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twitchKey.ForeColor = System.Drawing.Color.White;
+            this.twitchKey.Location = new System.Drawing.Point(134, 42);
+            this.twitchKey.Name = "twitchKey";
+            this.twitchKey.Size = new System.Drawing.Size(0, 16);
+            this.twitchKey.TabIndex = 20;
             // 
             // l85ValueLabel
             // 
@@ -514,14 +574,26 @@
             // commandoPanel
             // 
             this.commandoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.commandoPanel.Controls.Add(this.zofiaKey);
             this.commandoPanel.Controls.Add(this.commandoButton);
             this.commandoPanel.Controls.Add(this.commandoTrackbar);
             this.commandoPanel.Controls.Add(this.commandoValueLabel);
             this.commandoPanel.Controls.Add(this.commandoLabel);
-            this.commandoPanel.Location = new System.Drawing.Point(566, 89);
+            this.commandoPanel.Location = new System.Drawing.Point(600, 143);
             this.commandoPanel.Name = "commandoPanel";
-            this.commandoPanel.Size = new System.Drawing.Size(150, 100);
+            this.commandoPanel.Size = new System.Drawing.Size(181, 100);
             this.commandoPanel.TabIndex = 20;
+            // 
+            // zofiaKey
+            // 
+            this.zofiaKey.AutoSize = true;
+            this.zofiaKey.BackColor = System.Drawing.Color.Transparent;
+            this.zofiaKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zofiaKey.ForeColor = System.Drawing.Color.White;
+            this.zofiaKey.Location = new System.Drawing.Point(131, 42);
+            this.zofiaKey.Name = "zofiaKey";
+            this.zofiaKey.Size = new System.Drawing.Size(0, 16);
+            this.zofiaKey.TabIndex = 21;
             // 
             // commandoValueLabel
             // 
@@ -572,14 +644,26 @@
             // type89Panel
             // 
             this.type89Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.type89Panel.Controls.Add(this.jackalKey);
             this.type89Panel.Controls.Add(this.type89Button);
             this.type89Panel.Controls.Add(this.type89Trackbar);
             this.type89Panel.Controls.Add(this.type89ValueLabel);
             this.type89Panel.Controls.Add(this.type89Label);
-            this.type89Panel.Location = new System.Drawing.Point(738, 89);
+            this.type89Panel.Location = new System.Drawing.Point(790, 143);
             this.type89Panel.Name = "type89Panel";
-            this.type89Panel.Size = new System.Drawing.Size(150, 100);
+            this.type89Panel.Size = new System.Drawing.Size(181, 100);
             this.type89Panel.TabIndex = 20;
+            // 
+            // jackalKey
+            // 
+            this.jackalKey.AutoSize = true;
+            this.jackalKey.BackColor = System.Drawing.Color.Transparent;
+            this.jackalKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jackalKey.ForeColor = System.Drawing.Color.White;
+            this.jackalKey.Location = new System.Drawing.Point(133, 42);
+            this.jackalKey.Name = "jackalKey";
+            this.jackalKey.Size = new System.Drawing.Size(0, 16);
+            this.jackalKey.TabIndex = 22;
             // 
             // type89ValueLabel
             // 
@@ -606,14 +690,26 @@
             // ar33Panel
             // 
             this.ar33Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.ar33Panel.Controls.Add(this.hibanaKey);
             this.ar33Panel.Controls.Add(this.ar33Button);
             this.ar33Panel.Controls.Add(this.ar33Trackbar);
             this.ar33Panel.Controls.Add(this.label2);
             this.ar33Panel.Controls.Add(this.ar33ValueLabel);
-            this.ar33Panel.Location = new System.Drawing.Point(50, 195);
+            this.ar33Panel.Location = new System.Drawing.Point(39, 249);
             this.ar33Panel.Name = "ar33Panel";
-            this.ar33Panel.Size = new System.Drawing.Size(150, 100);
+            this.ar33Panel.Size = new System.Drawing.Size(181, 100);
             this.ar33Panel.TabIndex = 18;
+            // 
+            // hibanaKey
+            // 
+            this.hibanaKey.AutoSize = true;
+            this.hibanaKey.BackColor = System.Drawing.Color.Transparent;
+            this.hibanaKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hibanaKey.ForeColor = System.Drawing.Color.White;
+            this.hibanaKey.Location = new System.Drawing.Point(130, 43);
+            this.hibanaKey.Name = "hibanaKey";
+            this.hibanaKey.Size = new System.Drawing.Size(0, 16);
+            this.hibanaKey.TabIndex = 23;
             // 
             // ar33Button
             // 
@@ -667,14 +763,26 @@
             // g36cPanel
             // 
             this.g36cPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.g36cPanel.Controls.Add(this.aceKey);
             this.g36cPanel.Controls.Add(this.g36cButton);
             this.g36cPanel.Controls.Add(this.g36cTrackbar);
             this.g36cPanel.Controls.Add(this.label4);
             this.g36cPanel.Controls.Add(this.g36cValueLabel);
-            this.g36cPanel.Location = new System.Drawing.Point(222, 195);
+            this.g36cPanel.Location = new System.Drawing.Point(226, 249);
             this.g36cPanel.Name = "g36cPanel";
-            this.g36cPanel.Size = new System.Drawing.Size(150, 100);
+            this.g36cPanel.Size = new System.Drawing.Size(181, 100);
             this.g36cPanel.TabIndex = 19;
+            // 
+            // aceKey
+            // 
+            this.aceKey.AutoSize = true;
+            this.aceKey.BackColor = System.Drawing.Color.Transparent;
+            this.aceKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aceKey.ForeColor = System.Drawing.Color.White;
+            this.aceKey.Location = new System.Drawing.Point(130, 43);
+            this.aceKey.Name = "aceKey";
+            this.aceKey.Size = new System.Drawing.Size(0, 16);
+            this.aceKey.TabIndex = 24;
             // 
             // g36cButton
             // 
@@ -728,14 +836,26 @@
             // a556xiPanel
             // 
             this.a556xiPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.a556xiPanel.Controls.Add(this.amaruKey);
             this.a556xiPanel.Controls.Add(this.a556xiButton);
             this.a556xiPanel.Controls.Add(this.a556xiTrackbar);
             this.a556xiPanel.Controls.Add(this.label6);
             this.a556xiPanel.Controls.Add(this.a556xiValueLabel);
-            this.a556xiPanel.Location = new System.Drawing.Point(394, 195);
+            this.a556xiPanel.Location = new System.Drawing.Point(413, 249);
             this.a556xiPanel.Name = "a556xiPanel";
-            this.a556xiPanel.Size = new System.Drawing.Size(150, 100);
+            this.a556xiPanel.Size = new System.Drawing.Size(181, 100);
             this.a556xiPanel.TabIndex = 19;
+            // 
+            // amaruKey
+            // 
+            this.amaruKey.AutoSize = true;
+            this.amaruKey.BackColor = System.Drawing.Color.Transparent;
+            this.amaruKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amaruKey.ForeColor = System.Drawing.Color.White;
+            this.amaruKey.Location = new System.Drawing.Point(134, 43);
+            this.amaruKey.Name = "amaruKey";
+            this.amaruKey.Size = new System.Drawing.Size(0, 16);
+            this.amaruKey.TabIndex = 25;
             // 
             // a556xiButton
             // 
@@ -789,14 +909,26 @@
             // ak12Panel
             // 
             this.ak12Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.ak12Panel.Controls.Add(this.capitaoKey);
             this.ak12Panel.Controls.Add(this.ak12Button);
             this.ak12Panel.Controls.Add(this.ak12Trackbar);
             this.ak12Panel.Controls.Add(this.label8);
             this.ak12Panel.Controls.Add(this.ak12ValueLabel);
-            this.ak12Panel.Location = new System.Drawing.Point(566, 195);
+            this.ak12Panel.Location = new System.Drawing.Point(600, 249);
             this.ak12Panel.Name = "ak12Panel";
-            this.ak12Panel.Size = new System.Drawing.Size(150, 100);
+            this.ak12Panel.Size = new System.Drawing.Size(181, 100);
             this.ak12Panel.TabIndex = 19;
+            // 
+            // capitaoKey
+            // 
+            this.capitaoKey.AutoSize = true;
+            this.capitaoKey.BackColor = System.Drawing.Color.Transparent;
+            this.capitaoKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.capitaoKey.ForeColor = System.Drawing.Color.White;
+            this.capitaoKey.Location = new System.Drawing.Point(131, 43);
+            this.capitaoKey.Name = "capitaoKey";
+            this.capitaoKey.Size = new System.Drawing.Size(0, 16);
+            this.capitaoKey.TabIndex = 26;
             // 
             // ak12Button
             // 
@@ -850,14 +982,26 @@
             // auga2Panel
             // 
             this.auga2Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.auga2Panel.Controls.Add(this.nomadKey);
             this.auga2Panel.Controls.Add(this.auga2Button);
             this.auga2Panel.Controls.Add(this.auga2Trackbar);
             this.auga2Panel.Controls.Add(this.label10);
             this.auga2Panel.Controls.Add(this.auga2ValueLabel);
-            this.auga2Panel.Location = new System.Drawing.Point(738, 195);
+            this.auga2Panel.Location = new System.Drawing.Point(790, 249);
             this.auga2Panel.Name = "auga2Panel";
-            this.auga2Panel.Size = new System.Drawing.Size(150, 100);
+            this.auga2Panel.Size = new System.Drawing.Size(181, 100);
             this.auga2Panel.TabIndex = 19;
+            // 
+            // nomadKey
+            // 
+            this.nomadKey.AutoSize = true;
+            this.nomadKey.BackColor = System.Drawing.Color.Transparent;
+            this.nomadKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomadKey.ForeColor = System.Drawing.Color.White;
+            this.nomadKey.Location = new System.Drawing.Point(133, 43);
+            this.nomadKey.Name = "nomadKey";
+            this.nomadKey.Size = new System.Drawing.Size(0, 16);
+            this.nomadKey.TabIndex = 27;
             // 
             // auga2Button
             // 
@@ -892,9 +1036,9 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(3, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 16);
+            this.label10.Size = new System.Drawing.Size(80, 16);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Nomand:";
+            this.label10.Text = "Nomad:";
             // 
             // auga2ValueLabel
             // 
@@ -911,14 +1055,26 @@
             // c7ePanel
             // 
             this.c7ePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.c7ePanel.Controls.Add(this.lesionKey);
             this.c7ePanel.Controls.Add(this.c7eButton);
             this.c7ePanel.Controls.Add(this.c7eTrackbar);
             this.c7ePanel.Controls.Add(this.label12);
             this.c7ePanel.Controls.Add(this.c7eValueLabel);
-            this.c7ePanel.Location = new System.Drawing.Point(738, 301);
+            this.c7ePanel.Location = new System.Drawing.Point(790, 355);
             this.c7ePanel.Name = "c7ePanel";
-            this.c7ePanel.Size = new System.Drawing.Size(150, 100);
+            this.c7ePanel.Size = new System.Drawing.Size(181, 100);
             this.c7ePanel.TabIndex = 19;
+            // 
+            // lesionKey
+            // 
+            this.lesionKey.AutoSize = true;
+            this.lesionKey.BackColor = System.Drawing.Color.Transparent;
+            this.lesionKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lesionKey.ForeColor = System.Drawing.Color.White;
+            this.lesionKey.Location = new System.Drawing.Point(133, 40);
+            this.lesionKey.Name = "lesionKey";
+            this.lesionKey.Size = new System.Drawing.Size(0, 16);
+            this.lesionKey.TabIndex = 28;
             // 
             // c7eButton
             // 
@@ -972,14 +1128,26 @@
             // paraPanel
             // 
             this.paraPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.paraPanel.Controls.Add(this.mozzieKey);
             this.paraPanel.Controls.Add(this.paraButton);
             this.paraPanel.Controls.Add(this.paraTrackbar);
             this.paraPanel.Controls.Add(this.label14);
             this.paraPanel.Controls.Add(this.paraValueLabel);
-            this.paraPanel.Location = new System.Drawing.Point(566, 301);
+            this.paraPanel.Location = new System.Drawing.Point(600, 355);
             this.paraPanel.Name = "paraPanel";
-            this.paraPanel.Size = new System.Drawing.Size(150, 100);
+            this.paraPanel.Size = new System.Drawing.Size(181, 100);
             this.paraPanel.TabIndex = 19;
+            // 
+            // mozzieKey
+            // 
+            this.mozzieKey.AutoSize = true;
+            this.mozzieKey.BackColor = System.Drawing.Color.Transparent;
+            this.mozzieKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mozzieKey.ForeColor = System.Drawing.Color.White;
+            this.mozzieKey.Location = new System.Drawing.Point(131, 40);
+            this.mozzieKey.Name = "mozzieKey";
+            this.mozzieKey.Size = new System.Drawing.Size(0, 16);
+            this.mozzieKey.TabIndex = 29;
             // 
             // paraButton
             // 
@@ -1033,14 +1201,26 @@
             // mk17cqbPanel
             // 
             this.mk17cqbPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.mk17cqbPanel.Controls.Add(this.valkrieKey);
             this.mk17cqbPanel.Controls.Add(this.mk17Button);
             this.mk17cqbPanel.Controls.Add(this.mk17Trackbar);
             this.mk17cqbPanel.Controls.Add(this.label16);
             this.mk17cqbPanel.Controls.Add(this.mk17ValueLabel);
-            this.mk17cqbPanel.Location = new System.Drawing.Point(394, 301);
+            this.mk17cqbPanel.Location = new System.Drawing.Point(413, 355);
             this.mk17cqbPanel.Name = "mk17cqbPanel";
-            this.mk17cqbPanel.Size = new System.Drawing.Size(150, 100);
+            this.mk17cqbPanel.Size = new System.Drawing.Size(181, 100);
             this.mk17cqbPanel.TabIndex = 19;
+            // 
+            // valkrieKey
+            // 
+            this.valkrieKey.AutoSize = true;
+            this.valkrieKey.BackColor = System.Drawing.Color.Transparent;
+            this.valkrieKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valkrieKey.ForeColor = System.Drawing.Color.White;
+            this.valkrieKey.Location = new System.Drawing.Point(134, 40);
+            this.valkrieKey.Name = "valkrieKey";
+            this.valkrieKey.Size = new System.Drawing.Size(0, 16);
+            this.valkrieKey.TabIndex = 30;
             // 
             // mk17Button
             // 
@@ -1094,14 +1274,26 @@
             // c8sfwPanel
             // 
             this.c8sfwPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.c8sfwPanel.Controls.Add(this.banditKey);
             this.c8sfwPanel.Controls.Add(this.c8sfwButton);
             this.c8sfwPanel.Controls.Add(this.c8sfwTrackbar);
             this.c8sfwPanel.Controls.Add(this.label18);
             this.c8sfwPanel.Controls.Add(this.c85sfwValueLabel);
-            this.c8sfwPanel.Location = new System.Drawing.Point(222, 301);
+            this.c8sfwPanel.Location = new System.Drawing.Point(226, 355);
             this.c8sfwPanel.Name = "c8sfwPanel";
-            this.c8sfwPanel.Size = new System.Drawing.Size(150, 100);
+            this.c8sfwPanel.Size = new System.Drawing.Size(181, 100);
             this.c8sfwPanel.TabIndex = 19;
+            // 
+            // banditKey
+            // 
+            this.banditKey.AutoSize = true;
+            this.banditKey.BackColor = System.Drawing.Color.Transparent;
+            this.banditKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.banditKey.ForeColor = System.Drawing.Color.White;
+            this.banditKey.Location = new System.Drawing.Point(132, 40);
+            this.banditKey.Name = "banditKey";
+            this.banditKey.Size = new System.Drawing.Size(0, 16);
+            this.banditKey.TabIndex = 31;
             // 
             // c8sfwButton
             // 
@@ -1155,14 +1347,26 @@
             // carbinePanel
             // 
             this.carbinePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.carbinePanel.Controls.Add(this.maverickKey);
             this.carbinePanel.Controls.Add(this.carbineButton);
             this.carbinePanel.Controls.Add(this.carbineTrackbar);
             this.carbinePanel.Controls.Add(this.label20);
             this.carbinePanel.Controls.Add(this.carbineValueLabel);
-            this.carbinePanel.Location = new System.Drawing.Point(50, 301);
+            this.carbinePanel.Location = new System.Drawing.Point(39, 355);
             this.carbinePanel.Name = "carbinePanel";
-            this.carbinePanel.Size = new System.Drawing.Size(150, 100);
+            this.carbinePanel.Size = new System.Drawing.Size(181, 100);
             this.carbinePanel.TabIndex = 19;
+            // 
+            // maverickKey
+            // 
+            this.maverickKey.AutoSize = true;
+            this.maverickKey.BackColor = System.Drawing.Color.Transparent;
+            this.maverickKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maverickKey.ForeColor = System.Drawing.Color.White;
+            this.maverickKey.Location = new System.Drawing.Point(130, 40);
+            this.maverickKey.Name = "maverickKey";
+            this.maverickKey.Size = new System.Drawing.Size(0, 16);
+            this.maverickKey.TabIndex = 32;
             // 
             // carbineButton
             // 
@@ -1216,14 +1420,26 @@
             // m762Panel
             // 
             this.m762Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.m762Panel.Controls.Add(this.smokeKey);
             this.m762Panel.Controls.Add(this.m762Button);
             this.m762Panel.Controls.Add(this.m762Trackbar);
             this.m762Panel.Controls.Add(this.label22);
             this.m762Panel.Controls.Add(this.m762ValueLabel);
-            this.m762Panel.Location = new System.Drawing.Point(50, 407);
+            this.m762Panel.Location = new System.Drawing.Point(39, 461);
             this.m762Panel.Name = "m762Panel";
-            this.m762Panel.Size = new System.Drawing.Size(150, 100);
+            this.m762Panel.Size = new System.Drawing.Size(181, 100);
             this.m762Panel.TabIndex = 21;
+            // 
+            // smokeKey
+            // 
+            this.smokeKey.AutoSize = true;
+            this.smokeKey.BackColor = System.Drawing.Color.Transparent;
+            this.smokeKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smokeKey.ForeColor = System.Drawing.Color.White;
+            this.smokeKey.Location = new System.Drawing.Point(130, 40);
+            this.smokeKey.Name = "smokeKey";
+            this.smokeKey.Size = new System.Drawing.Size(0, 16);
+            this.smokeKey.TabIndex = 33;
             // 
             // m762Button
             // 
@@ -1277,14 +1493,26 @@
             // v308Panel
             // 
             this.v308Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.v308Panel.Controls.Add(this.elaKey);
             this.v308Panel.Controls.Add(this.v308Button);
             this.v308Panel.Controls.Add(this.v308Trackbar);
             this.v308Panel.Controls.Add(this.label24);
             this.v308Panel.Controls.Add(this.v308ValueLabel);
-            this.v308Panel.Location = new System.Drawing.Point(222, 407);
+            this.v308Panel.Location = new System.Drawing.Point(226, 461);
             this.v308Panel.Name = "v308Panel";
-            this.v308Panel.Size = new System.Drawing.Size(150, 100);
+            this.v308Panel.Size = new System.Drawing.Size(181, 100);
             this.v308Panel.TabIndex = 19;
+            // 
+            // elaKey
+            // 
+            this.elaKey.AutoSize = true;
+            this.elaKey.BackColor = System.Drawing.Color.Transparent;
+            this.elaKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elaKey.ForeColor = System.Drawing.Color.White;
+            this.elaKey.Location = new System.Drawing.Point(132, 40);
+            this.elaKey.Name = "elaKey";
+            this.elaKey.Size = new System.Drawing.Size(0, 16);
+            this.elaKey.TabIndex = 34;
             // 
             // v308Button
             // 
@@ -1338,14 +1566,26 @@
             // spearPanel
             // 
             this.spearPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.spearPanel.Controls.Add(this.docKey);
             this.spearPanel.Controls.Add(this.spearButton);
             this.spearPanel.Controls.Add(this.spearTrackbar);
             this.spearPanel.Controls.Add(this.label26);
             this.spearPanel.Controls.Add(this.spearValueLabel);
-            this.spearPanel.Location = new System.Drawing.Point(394, 407);
+            this.spearPanel.Location = new System.Drawing.Point(413, 461);
             this.spearPanel.Name = "spearPanel";
-            this.spearPanel.Size = new System.Drawing.Size(150, 100);
+            this.spearPanel.Size = new System.Drawing.Size(181, 100);
             this.spearPanel.TabIndex = 19;
+            // 
+            // docKey
+            // 
+            this.docKey.AutoSize = true;
+            this.docKey.BackColor = System.Drawing.Color.Transparent;
+            this.docKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.docKey.ForeColor = System.Drawing.Color.White;
+            this.docKey.Location = new System.Drawing.Point(134, 40);
+            this.docKey.Name = "docKey";
+            this.docKey.Size = new System.Drawing.Size(0, 16);
+            this.docKey.TabIndex = 35;
             // 
             // spearButton
             // 
@@ -1399,14 +1639,26 @@
             // ar15Panel
             // 
             this.ar15Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.ar15Panel.Controls.Add(this.kanyeKey);
             this.ar15Panel.Controls.Add(this.ar15Button);
             this.ar15Panel.Controls.Add(this.ar15Trackbar);
             this.ar15Panel.Controls.Add(this.label28);
             this.ar15Panel.Controls.Add(this.ar15ValueLabel);
-            this.ar15Panel.Location = new System.Drawing.Point(566, 407);
+            this.ar15Panel.Location = new System.Drawing.Point(600, 461);
             this.ar15Panel.Name = "ar15Panel";
-            this.ar15Panel.Size = new System.Drawing.Size(150, 100);
+            this.ar15Panel.Size = new System.Drawing.Size(181, 100);
             this.ar15Panel.TabIndex = 19;
+            // 
+            // kanyeKey
+            // 
+            this.kanyeKey.AutoSize = true;
+            this.kanyeKey.BackColor = System.Drawing.Color.Transparent;
+            this.kanyeKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kanyeKey.ForeColor = System.Drawing.Color.White;
+            this.kanyeKey.Location = new System.Drawing.Point(131, 40);
+            this.kanyeKey.Name = "kanyeKey";
+            this.kanyeKey.Size = new System.Drawing.Size(0, 16);
+            this.kanyeKey.TabIndex = 36;
             // 
             // ar15Button
             // 
@@ -1460,14 +1712,26 @@
             // m4Panel
             // 
             this.m4Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(30)))));
+            this.m4Panel.Controls.Add(this.jagerKey);
             this.m4Panel.Controls.Add(this.m4Button);
             this.m4Panel.Controls.Add(this.m4Trackbar);
             this.m4Panel.Controls.Add(this.label30);
             this.m4Panel.Controls.Add(this.m4ValueLabel);
-            this.m4Panel.Location = new System.Drawing.Point(738, 407);
+            this.m4Panel.Location = new System.Drawing.Point(790, 461);
             this.m4Panel.Name = "m4Panel";
-            this.m4Panel.Size = new System.Drawing.Size(150, 100);
+            this.m4Panel.Size = new System.Drawing.Size(181, 100);
             this.m4Panel.TabIndex = 19;
+            // 
+            // jagerKey
+            // 
+            this.jagerKey.AutoSize = true;
+            this.jagerKey.BackColor = System.Drawing.Color.Transparent;
+            this.jagerKey.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jagerKey.ForeColor = System.Drawing.Color.White;
+            this.jagerKey.Location = new System.Drawing.Point(133, 45);
+            this.jagerKey.Name = "jagerKey";
+            this.jagerKey.Size = new System.Drawing.Size(0, 16);
+            this.jagerKey.TabIndex = 37;
             // 
             // m4Button
             // 
@@ -1523,7 +1787,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(411, 63);
+            this.label3.Location = new System.Drawing.Point(50, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 16);
             this.label3.TabIndex = 20;
@@ -1535,7 +1799,7 @@
             this.scriptName.AutoEllipsis = true;
             this.scriptName.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scriptName.ForeColor = System.Drawing.Color.White;
-            this.scriptName.Location = new System.Drawing.Point(500, 62);
+            this.scriptName.Location = new System.Drawing.Point(139, 106);
             this.scriptName.Name = "scriptName";
             this.scriptName.Size = new System.Drawing.Size(167, 16);
             this.scriptName.TabIndex = 22;
@@ -1545,9 +1809,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.listBox1);
-            this.panel1.Location = new System.Drawing.Point(244, 9);
+            this.panel1.Location = new System.Drawing.Point(531, 97);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 45);
+            this.panel1.Size = new System.Drawing.Size(162, 35);
             this.panel1.TabIndex = 23;
             // 
             // listBox1
@@ -1562,7 +1826,7 @@
             "capslock",
             "scrolllock",
             "numlock"});
-            this.listBox1.Location = new System.Drawing.Point(3, 13);
+            this.listBox1.Location = new System.Drawing.Point(3, 9);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(148, 18);
             this.listBox1.TabIndex = 0;
@@ -1570,12 +1834,13 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(718, 40);
+            this.trackBar1.Location = new System.Drawing.Point(708, 108);
             this.trackBar1.Maximum = 5;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(104, 45);
             this.trackBar1.TabIndex = 24;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Value = 1;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
@@ -1583,30 +1848,19 @@
             // 
             this.pullDownAmount.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pullDownAmount.ForeColor = System.Drawing.Color.White;
-            this.pullDownAmount.Location = new System.Drawing.Point(755, 12);
+            this.pullDownAmount.Location = new System.Drawing.Point(730, 89);
             this.pullDownAmount.Name = "pullDownAmount";
             this.pullDownAmount.Size = new System.Drawing.Size(63, 16);
             this.pullDownAmount.TabIndex = 25;
             this.pullDownAmount.Text = "0,1";
             this.pullDownAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(619, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 16);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "PullDown:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // rapidFireButton
             // 
             this.rapidFireButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
             this.rapidFireButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rapidFireButton.ForeColor = System.Drawing.Color.White;
-            this.rapidFireButton.Location = new System.Drawing.Point(418, 10);
+            this.rapidFireButton.Location = new System.Drawing.Point(324, 97);
             this.rapidFireButton.Name = "rapidFireButton";
             this.rapidFireButton.Size = new System.Drawing.Size(195, 35);
             this.rapidFireButton.TabIndex = 20;
@@ -1614,16 +1868,117 @@
             this.rapidFireButton.UseVisualStyleBackColor = false;
             this.rapidFireButton.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // hotKeydropdown
+            // 
+            this.hotKeydropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(30)))));
+            this.hotKeydropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hotKeydropdown.ForeColor = System.Drawing.Color.White;
+            this.hotKeydropdown.FormattingEnabled = true;
+            this.hotKeydropdown.Items.AddRange(new object[] {
+            "F1",
+            "F2",
+            "F3",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12"});
+            this.hotKeydropdown.Location = new System.Drawing.Point(344, 19);
+            this.hotKeydropdown.Name = "hotKeydropdown";
+            this.hotKeydropdown.Size = new System.Drawing.Size(73, 21);
+            this.hotKeydropdown.TabIndex = 26;
+            this.hotKeydropdown.Text = "Key";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Elemental End", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(249, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "ctrl +";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // hotKeyOp
+            // 
+            this.hotKeyOp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(30)))));
+            this.hotKeyOp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hotKeyOp.ForeColor = System.Drawing.Color.White;
+            this.hotKeyOp.FormattingEnabled = true;
+            this.hotKeyOp.Items.AddRange(new object[] {
+            "ASH",
+            "SLEDGE",
+            "TWITCH",
+            "ZOFIA",
+            "JACKAL",
+            "HIBANA",
+            "ACE",
+            "AMARU",
+            "CAPITAO",
+            "NOMAD",
+            "MAVERICK",
+            "BANDIT",
+            "VALKRIE",
+            "MOZZIE",
+            "LESION",
+            "SMOKE",
+            "ELA",
+            "DOC",
+            "KANYE",
+            "JAGER"});
+            this.hotKeyOp.Location = new System.Drawing.Point(430, 19);
+            this.hotKeyOp.Name = "hotKeyOp";
+            this.hotKeyOp.Size = new System.Drawing.Size(183, 21);
+            this.hotKeyOp.TabIndex = 28;
+            this.hotKeyOp.Text = "Operator";
+            // 
+            // hotKeyButton
+            // 
+            this.hotKeyButton.BackColor = System.Drawing.Color.Black;
+            this.hotKeyButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hotKeyButton.BackgroundImage")));
+            this.hotKeyButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.hotKeyButton.Font = new System.Drawing.Font("Elemental End", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotKeyButton.ForeColor = System.Drawing.Color.White;
+            this.hotKeyButton.Location = new System.Drawing.Point(621, 19);
+            this.hotKeyButton.Name = "hotKeyButton";
+            this.hotKeyButton.Size = new System.Drawing.Size(119, 21);
+            this.hotKeyButton.TabIndex = 29;
+            this.hotKeyButton.Text = "HOTKEY";
+            this.hotKeyButton.UseVisualStyleBackColor = false;
+            this.hotKeyButton.Click += new System.EventHandler(this.hotKeyButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Elemental End", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(746, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 21);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "DELETE";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(946, 543);
-            this.Controls.Add(this.rapidFireButton);
+            this.ClientSize = new System.Drawing.Size(1005, 592);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.hotKeyButton);
+            this.Controls.Add(this.hotKeyOp);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.hotKeydropdown);
+            this.Controls.Add(this.rapidFireButton);
             this.Controls.Add(this.pullDownAmount);
-            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.scriptName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.m4Panel);
@@ -1653,6 +2008,7 @@
             this.Controls.Add(this.r4cPanel);
             this.Controls.Add(this.f2Panel);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.trackBar1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1844,8 +2200,32 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label pullDownAmount;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button rapidFireButton;
+        private System.Windows.Forms.ComboBox hotKeydropdown;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox hotKeyOp;
+        private System.Windows.Forms.Button hotKeyButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label ashKey;
+        private System.Windows.Forms.Label sledgeKey;
+        private System.Windows.Forms.Label twitchKey;
+        private System.Windows.Forms.Label zofiaKey;
+        private System.Windows.Forms.Label jackalKey;
+        private System.Windows.Forms.Label hibanaKey;
+        private System.Windows.Forms.Label aceKey;
+        private System.Windows.Forms.Label amaruKey;
+        private System.Windows.Forms.Label capitaoKey;
+        private System.Windows.Forms.Label nomadKey;
+        private System.Windows.Forms.Label lesionKey;
+        private System.Windows.Forms.Label mozzieKey;
+        private System.Windows.Forms.Label valkrieKey;
+        private System.Windows.Forms.Label banditKey;
+        private System.Windows.Forms.Label maverickKey;
+        private System.Windows.Forms.Label smokeKey;
+        private System.Windows.Forms.Label elaKey;
+        private System.Windows.Forms.Label docKey;
+        private System.Windows.Forms.Label kanyeKey;
+        private System.Windows.Forms.Label jagerKey;
     }
 }
 
