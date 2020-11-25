@@ -6,11 +6,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using Newtonsoft.Json;
 
 namespace GHUBLuaModifier
@@ -63,6 +65,7 @@ namespace GHUBLuaModifier
 
         }
 
+        KeyboardHook hook = new KeyboardHook();
 
         #region BoringStuff
 
@@ -81,7 +84,7 @@ namespace GHUBLuaModifier
         private string configPath;
         private string scriptPath;
 
-        private bool isConnected = false;
+
         private Thread thread;
         private Thread thread2;
 
@@ -95,6 +98,17 @@ namespace GHUBLuaModifier
         public Form1()
         {
             InitializeComponent();
+
+            hook.KeyPressed +=
+            new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
+            // register the control + alt + F12 combination as hot key.
+            hook.RegisterHotKey(GHUBLuaModifier.ModifierKeys.Control | GHUBLuaModifier.ModifierKeys.Alt,
+                Keys.F12);
+        }
+
+        private void hook_KeyPressed(object sender, KeyPressedEventArgs e)
+        {
+            UpdateRapidFire();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -105,13 +119,20 @@ namespace GHUBLuaModifier
 
             thread = new Thread(new ThreadStart(StartApp));
             thread.Start();
-
+            thread2 = new Thread(new ThreadStart(loadWeapons));
 
 
         }
 
         private void StartApp()
         {
+            if (!File.Exists("localdata.txt"))
+            {
+                var localFile = File.Create("localdata.txt");
+                localFile.Close();
+                this.Invoke(new MethodInvoker(() => DisableModifiers()));
+                
+            }
             int a = 1;
             while (a != 0)
             {
@@ -119,8 +140,73 @@ namespace GHUBLuaModifier
                 a = AttemptLoadFiles();
                 System.Threading.Thread.Sleep(100);
             }
-            thread2 = new Thread(new ThreadStart(loadWeapons));
-            thread2.Start();
+            if(a == 0)
+            {
+                
+                thread2.Start();
+                this.Invoke(new MethodInvoker(() => UpdateScriptName()));
+                this.Invoke(new MethodInvoker(() => CheckRapidFire()));
+            }
+            
+        }
+
+        private void DisableModifiers()
+        {
+            r4cButton.Enabled = false;
+            f2Button.Enabled = false;
+            l85Button.Enabled = false;
+            commandoButton.Enabled = false;
+            type89Button.Enabled = false;
+            ar33Button.Enabled = false;
+            g36cButton.Enabled = false;
+            a556xiButton.Enabled = false;
+            ak12Button.Enabled = false;
+            auga2Button.Enabled = false;
+            carbineButton.Enabled = false;
+            c8sfwButton.Enabled = false;
+            mk17Button.Enabled = false;
+            paraButton.Enabled = false;
+            c7eButton.Enabled = false;
+            m762Button.Enabled = false;
+            v308Button.Enabled = false;
+            spearButton.Enabled = false;
+            ar15Button.Enabled = false;
+            m4Button.Enabled = false;
+            rapidFireButton.Enabled = false;
+        }
+
+        private void EnableModifiers()
+        {
+            r4cButton.Enabled = true;
+            f2Button.Enabled = true;
+            l85Button.Enabled = true;
+            commandoButton.Enabled = true;
+            type89Button.Enabled = true;
+            ar33Button.Enabled = true;
+            g36cButton.Enabled = true;
+            a556xiButton.Enabled = true;
+            ak12Button.Enabled = true;
+            auga2Button.Enabled = true;
+            carbineButton.Enabled = true;
+            c8sfwButton.Enabled = true;
+            mk17Button.Enabled = true;
+            paraButton.Enabled = true;
+            c7eButton.Enabled = true;
+            m762Button.Enabled = true;
+            v308Button.Enabled = true;
+            spearButton.Enabled = true;
+            ar15Button.Enabled = true;
+            m4Button.Enabled = true;
+            rapidFireButton.Enabled = true;
+        }
+
+        private void UpdateScriptName()
+        {
+            if (myDictionary.ContainsKey("name"))
+            {
+
+                scriptName.Text = myDictionary["name"].ToString();
+            }
         }
 
         private void loadWeapons()
@@ -237,6 +323,8 @@ namespace GHUBLuaModifier
 
                 //Console.WriteLine(configPath);
                 //Console.WriteLine(scriptPath);
+                file.Close();
+                this.Invoke(new MethodInvoker(() => EnableModifiers()));
                 SetConnectedStatus();
                 
             }
@@ -246,12 +334,12 @@ namespace GHUBLuaModifier
                 Console.WriteLine(exc);
                 
                 this.Invoke(new MethodInvoker(() => currentStatus.Text = "No saved data, please select a folder"));
+                this.Invoke(new MethodInvoker(() => currentStatus.ForeColor = Color.Red));
                 return 1;
             }
             finally
             {
                 file.Close();
-
             }
 
             return 0;
@@ -272,8 +360,16 @@ namespace GHUBLuaModifier
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            thread.Abort();
-            thread2.Abort();
+            
+            if (thread.IsAlive)
+            {
+                thread.Abort();
+            }
+            if (thread2.IsAlive)
+            {
+                thread2.Abort();
+            }
+            
             Application.Exit();
         }
 
@@ -286,6 +382,11 @@ namespace GHUBLuaModifier
 
         private void findFolder_Click(object sender, EventArgs e)
         {
+            if (thread.IsAlive)
+            {
+                thread.Abort();
+            }
+            
             
             if (browseFolders.ShowDialog() == DialogResult.OK)
             {
@@ -293,14 +394,33 @@ namespace GHUBLuaModifier
                 configPath = workingPath + @"\config.json";
                 scriptPath = workingPath + @"\script.lua";
                 string[] lines = { configPath, scriptPath };
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter("localdata.txt"))
+                if (File.Exists("localdata.txt"))
                 {
-                    foreach (string line in lines)
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter("localdata.txt"))
                     {
-                        file.WriteLine(line);
+                        foreach (string line in lines)
+                        {
+                            file.WriteLine(line);
+                        }
                     }
+                    SetConnectedStatus();
+                    UpdateScriptName();
                 }
-                SetConnectedStatus();
+                else
+                {
+                    File.Create("localdata.txt");
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter("localdata.txt"))
+                    {
+                        foreach (string line in lines)
+                        {
+                            file.WriteLine(line);
+                        }
+                    }
+                    SetConnectedStatus();
+                    UpdateScriptName();
+                }
+
+
             }
             else
             {
@@ -311,11 +431,27 @@ namespace GHUBLuaModifier
 
         private void SetConnectedStatus()
         {
+            LoadJson();
+
             this.Invoke(new MethodInvoker(() => currentStatus.Text = "Connected"));
             this.Invoke(new MethodInvoker(() => currentStatus.ForeColor = Color.Green));
-            isConnected = true;
+            if (File.Exists("weapondata.json"))
+            {
+                if (File.ReadAllText("weapondata.json") != null)
+                {
+                    this.Invoke(new MethodInvoker(() => loadWeapons()));
+                    
+                }
+                else
+                {
+                    this.Invoke(new MethodInvoker(() => SaveWeapons()));
+                }
+            }
+            else
+            {
+                this.Invoke(new MethodInvoker(() => SaveWeapons()));
+            }
 
-            LoadJson();
         }
 
         private void LoadJson()
@@ -354,27 +490,23 @@ namespace GHUBLuaModifier
             weaponValues.Add("COMMANDO552", commandoTrackbar.Value / 10f);
             weaponValues.Add("TYPE89", type89Trackbar.Value / 10f);
 
-            weaponValues.Add("AR33", r4cTrackbar.Value / 10f);
-            weaponValues.Add("G36C", f2Trackbar.Value / 10f);
-            weaponValues.Add("A556XI", l85Trackerbar.Value / 10f);
-            weaponValues.Add("AK12", commandoTrackbar.Value / 10f);
+            weaponValues.Add("AR33", ar33Trackbar.Value / 10f);
+            weaponValues.Add("G36C", g36cTrackbar.Value / 10f);
+            weaponValues.Add("A556XI", a556xiTrackbar.Value / 10f);
+            weaponValues.Add("AK12", ak12Trackbar.Value / 10f);
             weaponValues.Add("AUGA2", type89Trackbar.Value / 10f);
 
-            weaponValues.Add("CARBINEC416", r4cTrackbar.Value / 10f);
-            weaponValues.Add("C8SFW", f2Trackbar.Value / 10f);
-            weaponValues.Add("MK17CQB", l85Trackerbar.Value / 10f);
-            weaponValues.Add("PARA308", commandoTrackbar.Value / 10f);
-            weaponValues.Add("C7E", type89Trackbar.Value / 10f);
-            weaponValues.Add("M762", r4cTrackbar.Value / 10f);
-            weaponValues.Add("V308", f2Trackbar.Value / 10f);
-            weaponValues.Add("SPEAR308", l85Trackerbar.Value / 10f);
-            weaponValues.Add("AR1550", commandoTrackbar.Value / 10f);
-            weaponValues.Add("M4", type89Trackbar.Value / 10f);
-            //string json = JsonConvert.SerializeObject(weaponValues);
-            //Console.WriteLine(json);
+            weaponValues.Add("CARBINEC416", carbineTrackbar.Value / 10f);
+            weaponValues.Add("C8SFW", c8sfwTrackbar.Value / 10f);
+            weaponValues.Add("MK17CQB", mk17Trackbar.Value / 10f);
+            weaponValues.Add("PARA308", paraTrackbar.Value / 10f);
+            weaponValues.Add("C7E", c7eTrackbar.Value / 10f);
 
-            //serialize and write as string
-            //File.WriteAllText("weapondata.json", JsonConvert.SerializeObject(weaponValues));
+            weaponValues.Add("M762", m762Trackbar.Value / 10f);
+            weaponValues.Add("V308", v308Trackbar.Value / 10f);
+            weaponValues.Add("SPEAR308", spearTrackbar.Value / 10f);
+            weaponValues.Add("AR1550", ar15Trackbar.Value / 10f);
+            weaponValues.Add("M4", m4Trackbar.Value / 10f);
 
             // serialize JSON directly to a file
             using (StreamWriter file = File.CreateText("weapondata.json"))
@@ -422,7 +554,7 @@ namespace GHUBLuaModifier
 
             tempInt = commandoTrackbar.Value / 10f;
             commandoValueLabel.Text = tempInt.ToString();
-            myWeapons.L85A2 = tempInt * 10;
+            myWeapons.COMMANDO552 = tempInt * 10;
 
         }
 
@@ -558,7 +690,6 @@ namespace GHUBLuaModifier
 
 
         #endregion
-
 
 
         #region WeaponButtonsPressed
@@ -749,6 +880,236 @@ namespace GHUBLuaModifier
         private void ChangeScript()
         {
             //possibly gonna do a rapid fire section
+            try
+            {
+                int tempVar = 0;
+                using (var input = File.OpenText(scriptPath))
+                using (var output = new StreamWriter("script.lua"))
+                {
+                    string line;
+                    while (null != (line = input.ReadLine()))
+                    {
+                        if (line.Contains("Sleep"))
+                        {
+                            if (tempVar == 0)
+                            {
+                                string a = line;
+                                string b = "                        Sleep(" + selectedValue.ToString() + ")";
+
+                                output.WriteLine(line.Replace(a, b));
+                                tempVar += 1;
+                            }
+                            else
+                            {
+                                output.WriteLine(line);
+                            }
+
+                        }
+                        else
+                        {
+
+                            output.WriteLine(line);
+                        }
+
+
+                    }
+                }
+                File.Delete(scriptPath);
+                File.Move("script.lua", scriptPath);
+            }
+            catch(Exception ae)
+            {
+                Console.WriteLine(ae);
+            }
+           
+        }
+
+        private void CheckRapidFire()
+        {
+            try
+            {
+                int tempVar = 0;
+                using (var input = File.OpenText(scriptPath))
+                {
+                    string line;
+                    while (null != (line = input.ReadLine()))
+                    {
+                        tempVar += 1;
+                        if (tempVar == 12)
+                        {
+                            if (!line.Contains("until not"))
+                            {
+                                input.Close();
+                                rapidFireButton.Text = "Disable Rapid Fire";
+                            }
+                            else
+                            {
+                                input.Close();
+                                rapidFireButton.Text = "Enable Rapid Fire";
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ae)
+            {
+                Console.WriteLine(ae);
+            }
+        }
+
+        private void UpdateRapidFire()
+        {
+            //easier just to store all these values and write them in
+           
+            try
+            {
+                int tempVar = 0;
+                using (var input = File.OpenText(scriptPath))
+                {
+                    string line;
+                    while (null != (line = input.ReadLine()))
+                    {
+                        tempVar += 1;
+                        if (tempVar == 12)
+                        {
+                            if (!line.Contains("until not"))
+                            {
+                                input.Close();
+                                DeleteRapidFire();
+                            }
+                            else
+                            {
+                                input.Close();
+                                WriteRapidFire();
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch(Exception ae)
+            {
+                Console.WriteLine(ae);
+            }
+            //if line 12 contains "IfMouseButtonPressed"
+            //rapid fire is on and disable it
+            //else rapid fire is off and enable it
+
+            //disable it:delete line 12 to 17
+            //enable it: cut line 12 to the end, write in rapid fire script, write cut lines
+            //line 12 to 17
+            /*
+               if IsMouseButtonPressed(4) then
+               repeat
+                   PressAndReleaseMouseButton(1)
+                   Sleep(1)
+               until not IsMouseButtonPressed(4)
+               end
+            */
+        }
+
+        private void WriteRapidFire()
+        {
+            string rapid1 = "                if IsMouseButtonPressed(4) then";
+            string rapid2 = "                repeat";
+            string rapid3 = "                    PressAndReleaseMouseButton(1)";
+            string rapid4 = "                    Sleep(1)";
+            string rapid5 = "                until not IsMouseButtonPressed(4)";
+            string rapid6 = "                end";
+
+            string replace1 = "            until not IsMouseButtonPressed(3)";
+            string replace2 = "        end";
+            string replace3 = "    end";
+            string replace4 = "end";
+
+            try
+            {
+                int tempVar = 0;
+                using (var input = File.OpenText(scriptPath))
+                using (var output = new StreamWriter("script.lua"))
+                {
+                    string line;
+                    while (null != (line = input.ReadLine()))
+                    {
+                        tempVar += 1;
+                        if (tempVar < 12)
+                        {
+                            output.WriteLine(line);
+                        }
+                        else if (tempVar == 12)
+                        {
+                            output.WriteLine(rapid1);
+                            output.WriteLine(rapid2);
+                            output.WriteLine(rapid3);
+                            output.WriteLine(rapid4);
+                            output.WriteLine(rapid5);
+                            output.WriteLine(rapid6);
+                            output.WriteLine(replace1);
+                            output.WriteLine(replace2);
+                            output.WriteLine(replace3);
+                            output.WriteLine(replace4);
+                        }
+
+
+                    }
+                }
+                File.Delete(scriptPath);
+                File.Move("script.lua", scriptPath);
+
+                rapidFireButton.Text = "Disable Rapid fire";
+            }
+            catch (Exception ae)
+            {
+                Console.WriteLine(ae);
+            }
+        }
+
+        private void DeleteRapidFire()
+        {
+
+            string replace1 = "            until not IsMouseButtonPressed(3)";
+            string replace2 = "        end";
+            string replace3 = "    end";
+            string replace4 = "end";
+
+            try
+            {
+                int tempVar = 0;
+                using (var input = File.OpenText(scriptPath))
+                using (var output = new StreamWriter("script.lua"))
+                {
+                    string line;
+                    while (null != (line = input.ReadLine()))
+                    {
+                        tempVar += 1;
+                        if (tempVar < 12)
+                        {
+                            output.WriteLine(line);
+                        }
+                        else if (tempVar == 12)
+                        {
+                            output.WriteLine(replace1);
+                            output.WriteLine(replace2);
+                            output.WriteLine(replace3);
+                            output.WriteLine(replace4);
+                        }
+
+
+                    }
+                }
+                File.Delete(scriptPath);
+                File.Move("script.lua", scriptPath);
+
+                rapidFireButton.Text = "Enable Rapid fire";
+            }
+            catch (Exception ae)
+            {
+                Console.WriteLine(ae);
+            }
+        }
+        private void UpdateHotKey(string whichKey)
+        {
             int tempVar = 0;
             using (var input = File.OpenText(scriptPath))
             using (var output = new StreamWriter("script.lua"))
@@ -756,31 +1117,231 @@ namespace GHUBLuaModifier
                 string line;
                 while (null != (line = input.ReadLine()))
                 {
-                    if (line.Contains("Sleep"))
+                    if (line.Contains("IsKeyLockOn"))
                     {
-                        if (tempVar == 0)
+                        if(tempVar == 0)
                         {
                             string a = line;
-                            string b = "                        Sleep(" + selectedValue.ToString() + ")";
+                            string b = @"    if IsKeyLockOn(""" + whichKey + @""")then";
 
                             output.WriteLine(line.Replace(a, b));
                             tempVar += 1;
                         }
-
+                        else
+                        {
+                            output.WriteLine(line);
+                        }
                     }
                     else
                     {
-
                         output.WriteLine(line);
                     }
-
-
                 }
             }
             File.Delete(scriptPath);
             File.Move("script.lua", scriptPath);
+
         }
 
+        private void UpdatePullDown(string amount)
+        {
+            //MoveMouseRelative
+            int tempVar = 0;
+            using (var input = File.OpenText(scriptPath))
+            using (var output = new StreamWriter("script.lua"))
+            {
+                string line;
+                while (null != (line = input.ReadLine()))
+                {
+                    if (line.Contains("MoveMouseRelative"))
+                    {
+                        if (tempVar == 0)
+                        {
+                            string a = line;
+                            string b = @"                        MoveMouseRelative(" + amount + ")";
 
+                            output.WriteLine(line.Replace(a, b));
+                            tempVar += 1;
+                        }
+                        else
+                        {
+                            output.WriteLine(line);
+                        }
+                    }
+                    else
+                    {
+                        output.WriteLine(line);
+                    }
+                }
+            }
+            File.Delete(scriptPath);
+            File.Move("script.lua", scriptPath);
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateHotKey(listBox1.SelectedItem.ToString());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ShowDialog();
+        }
+
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            string tempString = "0," + trackBar1.Value.ToString();
+            pullDownAmount.Text = tempString;
+            UpdatePullDown(tempString);
+            //Thread.Sleep(1000);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            UpdateRapidFire();
+        }
+    }
+
+    public sealed class KeyboardHook : IDisposable
+    {
+        // Registers a hot key with Windows.
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
+        // Unregisters the hot key with Windows.
+        [DllImport("user32.dll")]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+        /// <summary>
+        /// Represents the window that is used internally to get the messages.
+        /// </summary>
+        private class Window : NativeWindow, IDisposable
+        {
+            private static int WM_HOTKEY = 0x0312;
+
+            public Window()
+            {
+                // create the handle for the window.
+                this.CreateHandle(new CreateParams());
+            }
+
+            /// <summary>
+            /// Overridden to get the notifications.
+            /// </summary>
+            /// <param name="m"></param>
+            protected override void WndProc(ref Message m)
+            {
+                base.WndProc(ref m);
+
+                // check if we got a hot key pressed.
+                if (m.Msg == WM_HOTKEY)
+                {
+                    // get the keys.
+                    Keys key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
+                    ModifierKeys modifier = (ModifierKeys)((int)m.LParam & 0xFFFF);
+
+                    // invoke the event to notify the parent.
+                    if (KeyPressed != null)
+                        KeyPressed(this, new KeyPressedEventArgs(modifier, key));
+                }
+            }
+
+            public event EventHandler<KeyPressedEventArgs> KeyPressed;
+
+            #region IDisposable Members
+
+            public void Dispose()
+            {
+                this.DestroyHandle();
+            }
+
+            #endregion
+        }
+
+        private Window _window = new Window();
+        private int _currentId;
+
+        public KeyboardHook()
+        {
+            // register the event of the inner native window.
+            _window.KeyPressed += delegate (object sender, KeyPressedEventArgs args)
+            {
+                if (KeyPressed != null)
+                    KeyPressed(this, args);
+            };
+        }
+
+        /// <summary>
+        /// Registers a hot key in the system.
+        /// </summary>
+        /// <param name="modifier">The modifiers that are associated with the hot key.</param>
+        /// <param name="key">The key itself that is associated with the hot key.</param>
+        public void RegisterHotKey(ModifierKeys modifier, Keys key)
+        {
+            // increment the counter.
+            _currentId = _currentId + 1;
+
+            // register the hot key.
+            if (!RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
+                throw new InvalidOperationException("Couldn’t register the hot key.");
+        }
+
+        /// <summary>
+        /// A hot key has been pressed.
+        /// </summary>
+        public event EventHandler<KeyPressedEventArgs> KeyPressed;
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+            // unregister all the registered hot keys.
+            for (int i = _currentId; i > 0; i--)
+            {
+                UnregisterHotKey(_window.Handle, i);
+            }
+
+            // dispose the inner native window.
+            _window.Dispose();
+        }
+
+        #endregion
+    }
+
+    /// <summary>
+    /// Event Args for the event that is fired after the hot key has been pressed.
+    /// </summary>
+    public class KeyPressedEventArgs : EventArgs
+    {
+        private ModifierKeys _modifier;
+        private Keys _key;
+
+        internal KeyPressedEventArgs(ModifierKeys modifier, Keys key)
+        {
+            _modifier = modifier;
+            _key = key;
+        }
+
+        public ModifierKeys Modifier
+        {
+            get { return _modifier; }
+        }
+
+        public Keys Key
+        {
+            get { return _key; }
+        }
+    }
+
+    /// <summary>
+    /// The enumeration of possible modifiers.
+    /// </summary>
+    [Flags]
+    public enum ModifierKeys : uint
+    {
+        Alt = 1,
+        Control = 2,
+        Shift = 4,
+        Win = 8
     }
 }
